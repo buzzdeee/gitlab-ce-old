@@ -621,7 +621,7 @@ namespace :gitlab do
     end
 
     def sidekiq_process_count
-      ps_ux, _ = Gitlab::Popen.popen(%W(ps ux))
+      ps_ux, _ = Gitlab::Popen.popen(%W(ps uxww))
       ps_ux.scan(/sidekiq \d+\.\d+\.\d+/).count
     end
   end
